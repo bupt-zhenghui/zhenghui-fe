@@ -73,12 +73,12 @@ export default class NavigatorRow extends React.Component<IProp, any> {
     const { src, title, id, href } = this.props
     return (
       <Row align={"middle"} style={{backgroundColor:"transparent", marginBottom:20}}>
-        <Col span={4} offset={4} style={{display:"flex", alignItems:"center"}}>
-          <Link to={ href }><Image width={120} height={34} src={ src } preview={ false } /></Link>
-          <Text className={ styles.customText }>{ title }</Text>
+        <Col span={6} offset={3} style={{display: "flex", alignItems: "center"}}>
+          <Link to={href}><Image width={120} height={34} src={src} preview={false}/></Link>
+          <Text className={styles.customText}>{title}</Text>
         </Col>
         <Col span={6} offset={1}>
-          <Search placeholder="input search text" onSearch={ this.state.funcList[id] } enterButton />
+          <Search placeholder="input search text" onSearch={this.state.funcList[id]} enterButton/>
         </Col>
       </Row>
     )

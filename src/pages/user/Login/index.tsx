@@ -48,13 +48,61 @@ const Login: React.FC = () => {
   const intl = useIntl();
 
   const fetchUserInfo = async () => {
-    const userInfo = await initialState?.fetchUserInfo?.();
-    if (userInfo) {
-      setInitialState({
-        ...initialState,
-        currentUser: userInfo,
-      });
-    }
+    setInitialState({
+      ...initialState,
+      currentUser: {
+        name: 'Z.H Wang',
+        avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+        userid: '00000001',
+        email: 'antdesign@alipay.com',
+        signature: '海纳百川，有容乃大',
+        title: '交互专家',
+        group: '蚂蚁金服－某某某事业群－某某平台部－某某技术部－UED',
+        tags: [
+          {
+            key: '0',
+            label: '很有想法的',
+          },
+          {
+            key: '1',
+            label: '专注设计',
+          },
+          {
+            key: '2',
+            label: '辣~',
+          },
+          {
+            key: '3',
+            label: '大长腿',
+          },
+          {
+            key: '4',
+            label: '川妹子',
+          },
+          {
+            key: '5',
+            label: '海纳百川',
+          },
+        ],
+        notifyCount: 12,
+        unreadCount: 11,
+        country: 'China',
+        access: 'admin',
+        geographic: {
+          province: {
+            label: '浙江省',
+            key: '330000',
+          },
+          city: {
+            label: '杭州市',
+            key: '330100',
+          },
+        },
+        address: '西湖区工专路 77 号',
+        phone: '0752-268888888',
+      },
+    });
+
   };
 
   const handleSubmit = async (values: API.LoginParams) => {
@@ -84,8 +132,9 @@ const Login: React.FC = () => {
     }
     setSubmitting(false);
   };
-  const { status, type: loginType } = userLoginState;
-
+  const values = {username: "admin", password: "ant.design", autoLogin: true}
+  const {status, type: loginType} = userLoginState;
+  handleSubmit(values as API.LoginParams)
   return (
     <div className={styles.container}>
       <div className={styles.lang} data-lang>
@@ -124,9 +173,6 @@ const Login: React.FC = () => {
                   width: '100%',
                 },
               },
-            }}
-            onFinish={async (values) => {
-              handleSubmit(values as API.LoginParams);
             }}
           >
             <Tabs activeKey={type} onChange={setType}>
