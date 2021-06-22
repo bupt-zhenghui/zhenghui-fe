@@ -8,6 +8,7 @@ export default {
   'menu.admin.consumption': '微信消费数据',
   'menu.report': '月报',
   'menu.project': '近期项目',
+  'menu.tomorrow': '明天，你好',
   'menu.login': '登录',
   'menu.register': '注册',
   'menu.register.result': '注册结果',

@@ -3,6 +3,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import {Alert, Card} from "antd";
 import NavigatorRow from "@/components/NavigatorRow";
 import { useIntl } from "umi";
+import CourseRow from "@/components/NavigatorRow/CourseRow";
 
 export default (): React.ReactNode => {
   const intl = useIntl();
@@ -30,6 +31,9 @@ export default (): React.ReactNode => {
         <NavigatorRow id={6} title="北邮人bt搜索" src="/icons/bupt.png" href="https://bt.byr.cn/torrents.php" />
         <NavigatorRow id={7} title="豆瓣搜索" src="/icons/douban.png" href="https://www.douban.com/" />
         <NavigatorRow id={8} title="Leetcode搜索" src="/icons/leetcode.svg" href="https://leetcode-cn.com/problemset/all/" />
+      </Card>
+      <Card title="必看的CS神课">
+        <CourseRow />
       </Card>
     </PageContainer>
   );
