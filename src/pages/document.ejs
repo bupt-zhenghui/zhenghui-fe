@@ -23,7 +23,19 @@
     />
     <title>Ant Design Pro</title>
     <link rel="icon" href="<%= context.config.publicPath +'favicon.ico'%>" type="image/x-icon" />
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
   </head>
+  <script>
+    function get_cnt(){
+      var ip = returnCitySN["cip"] + ',' + returnCitySN["cname"]
+      console.log(ip)
+      httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+      httpRequest.open('GET', 'http://zhenghui.tech/get_cnt?ip=' + ip, true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+      httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+      console.log("complete...")
+    }
+    // get_cnt()
+  </script>
   <body>
     <noscript>Out-of-the-box mid-stage front/design solution!</noscript>
     <div id="root">

@@ -2,25 +2,12 @@ import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import {Alert, Card} from "antd";
 import NavigatorRow from "@/components/NavigatorRow";
-import { useIntl } from "umi";
 import CourseRow from "@/components/NavigatorRow/CourseRow";
 
 export default (): React.ReactNode => {
-  const intl = useIntl();
   return (
     <PageContainer>
-      <Alert
-        message={intl.formatMessage({
-          id: 'pages.navigator.message',
-        })}
-        type="success"
-        showIcon
-        banner
-        style={{
-          margin: -12,
-          marginBottom: 12,
-        }}
-      />
+      <Alert message="主页正在重构中，预计会在9月正式上线，敬请期待～！" type="info" showIcon closable style={{marginBottom:12}}/>
       <Card style={{marginBottom:20}}>
         <NavigatorRow id={0} title="谷歌搜索" src="/icons/google.png" href="https://www.google.com.hk/"/>
         <NavigatorRow id={1} title="百度搜索" src="/icons/baidu.png" href="https://www.baidu.com" />

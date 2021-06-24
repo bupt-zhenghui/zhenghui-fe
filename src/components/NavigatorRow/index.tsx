@@ -24,7 +24,6 @@ export default class NavigatorRow extends React.Component<IProp, any> {
     }
   }
 
-
   public onGoogleSearch = (value: string) => {
     const val = value.replace(" ", "+")
     window.open(`https://www.google.com.hk/search?q=${ val }`)

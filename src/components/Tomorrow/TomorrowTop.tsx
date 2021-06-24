@@ -7,12 +7,12 @@ export default class TomorrowTop extends React.Component {
 
   public render() {
     return (
-      <Card style={{textAlign: "center", height: 300}}>
+      <Card className={ styles.customCard }>
         <ReactAudioPlayer
           src="http://123.57.66.63:8888/music/%E6%98%8E%E5%A4%A9%2C%E4%BD%A0%E5%A5%BD.mp3"
           autoPlay
           controls
-          style={{marginBottom: 12}}
+          style={{marginBottom:"12"}}
         />
         <div style={{overflowY:"auto", height: 180}}>
           <p className={ styles.customP }>看昨天的我们走远了</p>
