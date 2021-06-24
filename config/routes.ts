@@ -73,7 +73,7 @@
   },
   {
     path: '/',
-    redirect: '/navigator',
+    redirect: '/thanks',
   },
   {
     component: './404',
