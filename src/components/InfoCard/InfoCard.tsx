@@ -23,8 +23,8 @@ export default class InfoCard extends React.Component {
             <Col span={8} offset={1}>
               <Typography>
                 <Title level={2} style={{textAlign: "center"}}>汪正徽 Z.H Wang</Title>
-                <Title level={5} style={{marginTop: 0}}>学历：本科生 大四在读（保研）</Title>
-                <Title level={5} style={{marginTop: 0}}>所在单位：北京邮电大学 国际学院</Title>
+                <Title level={5} style={{marginTop: 0}}>学历：本科（毕业）</Title>
+                <Title level={5} style={{marginTop: 0}}>所在单位：北京邮电大学</Title>
                 <Title level={5} style={{marginTop: 0}}>地址：北京市西土城路10号 北京邮电大学</Title>
                 <Title level={5} style={{marginTop: 0}}>电话：18055627612</Title>
                 <Title level={5} style={{marginTop: 0}}>邮箱：wangzhenghui@bupt.edu.cn</Title>
@@ -70,7 +70,7 @@ export default class InfoCard extends React.Component {
                 <Award title="北京邮电大学校级三好学生" date="2018.10"/>
                 <Award title="入选北邮叶培大实验班" date="2018.11"/>
                 <Award title="全国大学生数学竞赛三等奖" date="2018.12"/>
-                <Award title="项目：MIT Summer Program -- Machine Learning" date="2019.06~2019.07"/>
+                <Award title="项目：MIT Summer Program(ML)" date="2019.06~2019.07"/>
                 <Award title="项目：全国大学生创新创业大赛国家级项目" date="2019.08~2020.05"/>
                 <Award title="保研：人工智能学院 智能科学与技术系" date="2020.10"/>
                 <Award title="实习：Nice算法组" date="2020.11~2021.01"/>

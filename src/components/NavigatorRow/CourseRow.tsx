@@ -1,11 +1,11 @@
 import React from 'react';
 import {Space, Table, Tag} from "antd";
 
+export const colorList = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+
 export default class CourseRow extends React.Component {
 
   public render() {
-
-    const colorList = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 
     const dataSource = [
       {

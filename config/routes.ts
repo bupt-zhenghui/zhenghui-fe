@@ -54,6 +54,12 @@
     component: './TableList',
   },
   {
+    name: 'leetcode',
+    icon: 'table',
+    path: '/leetcode',
+    component: './Leetcode',
+  },
+  {
     name: 'report',
     icon: 'table',
     path: '/report',

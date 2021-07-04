@@ -1,31 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Line } from '@ant-design/charts';
+import React from 'react';
+import {Line} from '@ant-design/charts';
 
-const DemoLine: React.FC = () => {
-  const [data, setData] = useState([]);
-  const asyncFetch = () => {
-    fetch('https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json')
-      .then((response) => response.json())
-      .then((json) => setData(json))
-      .catch((error) => {
-        console.log('fetch data failed', error);
-      });
-  };
-  useEffect(() => {
-    asyncFetch();
-  }, []);
-  const config = {
-    data,
-    padding: 'auto',
-    xField: 'Date',
-    yField: 'scales',
-    xAxis: {
-      type: 'timeCat',
-      tickCount: 5,
-    },
-  };
+interface IProps {
+  daily_list: Array<{ date: string, number: number }>
+}
 
-  return <Line {...config} />;
+export default class DemoLine extends React.Component<IProps, any> {
+
+  constructor(props: IProps) {
+    super(props);
+  }
+
+  public render() {
+    const {daily_list} = this.props
+    const config = {
+      data: daily_list,
+      padding: 'auto',
+      xField: 'date',
+      yField: 'number',
+      xAxis: {
+        type: 'timeCat',
+        tickCount: 5,
+      },
+    };
+    // @ts-ignore
+    return <Line {...config} />;
+  }
 };
-
-export default DemoLine;

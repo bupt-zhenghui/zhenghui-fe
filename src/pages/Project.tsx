@@ -1,7 +1,9 @@
 import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import {Space, Table, Tag} from "antd";
+import {AccessPage, sendAccessInfo} from "@/services/access_data";
 
+sendAccessInfo(null, AccessPage.PageProject)
 export default (): React.ReactNode => {
 
   const dataSource = [

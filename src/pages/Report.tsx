@@ -1,23 +1,25 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
+import React, {useEffect, useState} from 'react';
+import {PageContainer} from '@ant-design/pro-layout';
 import {Space, Table, Tag} from "antd";
+import {getMonthlyReport} from "@/services/leetcode";
+import {colorList} from "@/components/NavigatorRow/CourseRow";
+import {AccessPage, sendAccessInfo} from "@/services/access_data";
+
+const getAllReport = getMonthlyReport;
+sendAccessInfo(null, AccessPage.PageReport)
 
 export default (): React.ReactNode => {
 
-  const dataSource = [
-    {
-      key: '1',
-      title: '2021六月月报',
-      tags: ['test', 'training'],
-      create_time: '2021-06-15 06:21:21'
-    },
-    {
-      key: '2',
-      title: '2021五月月报',
-      tags: ['training', 'test'],
-      create_time: '2021-05-15 06:21:21'
-    },
-  ];
+  const [reportList, setReportList] = useState([]);
+
+  useEffect(() => {
+    const getReportList = async () => {
+      const reportList = await getAllReport(null);
+      setReportList(reportList)
+    }
+    getReportList();
+    console.log("report list: ", reportList)
+  }, [])
 
   const columns = [
     {
@@ -31,22 +33,21 @@ export default (): React.ReactNode => {
       key: 'tags',
       render: (tags: any[]) => (
         <>
-          {tags.map(tag => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
+          <>
+            {tags.map(tag => {
+              let color = colorList[Math.floor(Math.random() * 6)]
+              return (
+                <Tag color={color} key={tag}>
+                  {tag.toUpperCase()}
+                </Tag>
+              );
+            })}
+          </>
         </>
       ),
     },
     {
-      title: '创建时间',
+      title: '最后修改时间',
       dataIndex: 'create_time',
       key: 'create_time',
     },
@@ -54,9 +55,9 @@ export default (): React.ReactNode => {
       title: '操作',
       dataIndex: '',
       key: 'x',
-      render: () => (
+      render: (text: any, record: any) => (
         <Space size="middle">
-          <a>预览</a>
+          <a href={`http://123.57.66.63:8001/monthly_report/${record.url}`}>预览</a>
           <a>下载</a>
         </Space>
       )
@@ -65,7 +66,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <Table dataSource={dataSource} columns={columns} />;
+      <Table dataSource={reportList} columns={columns}/>;
     </PageContainer>
   );
 };
