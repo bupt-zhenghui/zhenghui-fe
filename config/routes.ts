@@ -45,14 +45,20 @@
         icon: 'smile',
         component: './Admin/Consumption',
       },
+      {
+        path: '/admin/control-panel',
+        name: 'control-panel',
+        icon: 'smile',
+        component: './Admin/Control-panel',
+      },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: 'list.table-list',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './TableList',
+  // },
   {
     name: 'leetcode',
     icon: 'table',

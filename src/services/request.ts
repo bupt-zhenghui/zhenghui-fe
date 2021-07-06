@@ -1,5 +1,6 @@
 import axios, {AxiosError, AxiosRequestConfig, AxiosResponse} from 'axios'
 import {message} from "antd";
+import {backendAPI} from "@/pages/consts";
 
 // axios.defaults.withCredentials = true;
 
@@ -25,8 +26,7 @@ const errorHandler = (error: AxiosError) => {
 }
 
 const horizonApi = axios.create({
-  baseURL: 'http://123.57.66.63:8080/api/v1',
-  // baseURL: 'http://0.0.0.0:8080/api/v1',
+  baseURL: backendAPI,
   timeout: 30 * 1000,
 })
 

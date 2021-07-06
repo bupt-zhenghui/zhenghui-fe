@@ -15,20 +15,20 @@ export default () => {
       links={[
         {
           key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
-          href: 'https://pro.ant.design',
+          title: 'zhenghui-backend',
+          href: 'https://github.com/bupt-zhenghui/zhenghui-backend',
           blankTarget: true,
         },
         {
           key: 'github',
-          title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          title: <GithubOutlined/>,
+          href: 'https://github.com/bupt-zhenghui',
           blankTarget: true,
         },
         {
           key: 'Ant Design',
-          title: 'Ant Design',
-          href: 'https://ant.design',
+          title: 'zhenghui-fe',
+          href: 'https://github.com/bupt-zhenghui/zhenghui-fe',
           blankTarget: true,
         },
       ]}

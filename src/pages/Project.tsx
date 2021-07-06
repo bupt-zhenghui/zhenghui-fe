@@ -1,50 +1,47 @@
-import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
+import React, {useEffect, useState} from 'react';
+import {PageContainer} from '@ant-design/pro-layout';
 import {Space, Table, Tag} from "antd";
 import {AccessPage, sendAccessInfo} from "@/services/access_data";
+import {SearchProject} from "@/services/project";
+import {colorList} from "@/components/NavigatorRow/CourseRow";
+import {fileServer, projectPrefix} from "@/pages/consts";
+import {String2Time} from "@/pages/utils";
 
 sendAccessInfo(null, AccessPage.PageProject)
 export default (): React.ReactNode => {
 
-  const dataSource = [
-    {
-      key: '1',
-      title: '2021六月月报',
-      tags: ['test', 'training'],
-      create_time: '2021-06-15 06:21:21'
-    },
-    {
-      key: '2',
-      title: '2021五月月报',
-      tags: ['training', 'test'],
-      create_time: '2021-05-15 06:21:21'
-    },
-    {
-      key: '3',
-      title: '2021四月月报',
-      tags: ['test', 'training'],
-      create_time: '2021-05-18 06:21:21'
-    },
-  ];
+  const [projectList, setProjectList] = useState([]);
+
+  useEffect(() => {
+    const getProjectList = async () => {
+      const projectList = await SearchProject(null);
+      setProjectList(projectList)
+    }
+    getProjectList();
+    console.log("project list: ", projectList)
+  }, [])
 
   const columns = [
     {
+      title: 'id',
+      dataIndex: 'id',
+      key: 'key',
+      style: {display: "none"},
+    },
+    {
       title: '标题',
-      dataIndex: 'title',
-      key: 'title',
+      dataIndex: 'name',
+      key: 'name',
       sorter: (a: any, b: any) => a.key - b.key
     },
     {
       title: '标签',
-      dataIndex: 'tags',
-      key: 'tags',
+      dataIndex: 'tag',
+      key: 'tag',
       render: (tags: any[]) => (
         <>
           {tags.map(tag => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
+            let color = colorList[Math.floor(Math.random() * 6)]
             return (
               <Tag color={color} key={tag}>
                 {tag.toUpperCase()}
@@ -64,15 +61,31 @@ export default (): React.ReactNode => {
         let t2 = new Date(b.create_time).getTime()
         return t2 - t1
       },
+      render: (text: string) => String2Time(text)
     },
     {
       title: '操作',
       dataIndex: '',
       key: 'x',
-      render: () => (
+      render: (text: any, record: any) => (
         <Space size="middle">
-          <a>源码</a>
-          <a>文档</a>
+          {record.github_url === "" ?
+            <a disabled>Github</a>
+            :
+            <a href={fileServer + projectPrefix + record.github_url} target="_blank">Github</a>
+          }
+          {
+            record.md_url === "" ?
+              <a disabled>文档</a>
+              :
+              <a href={fileServer + projectPrefix + record.md_url} target="_blank">文档</a>
+          }
+          {
+            record.project_url === "" ?
+              <a disabled>下载</a>
+              :
+              <a href={fileServer + projectPrefix + record.project_url} target="_blank">下载</a>
+          }
         </Space>
       )
     },
@@ -84,7 +97,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <Table dataSource={dataSource} columns={columns} onChange={ onChange }/>;
+      <Table dataSource={projectList} columns={columns} rowKey={(record) => record.id} onChange={onChange}/>;
     </PageContainer>
   );
 };

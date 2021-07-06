@@ -26,23 +26,23 @@ let VisualCard1 = () => {
       <Row>
         <Col span={4}>
           <strong>总浏览量</strong><br/>
-          <text className={styles.customNumber}>{statistics.total_number}</text>
+          <div className={styles.customNumber}>{statistics.total_number}</div>
         </Col>
         <Col span={5} className={styles.customCol}>
           <strong>近7日浏览量</strong><br/>
-          <text className={styles.customNumber}>{statistics.recent_week_number}</text>
+          <div className={styles.customNumber}>{statistics.recent_week_number}</div>
         </Col>
         <Col span={5} className={styles.customCol}>
           <strong>近30日浏览量</strong><br/>
-          <text className={styles.customNumber}>{statistics.recent_month_number}</text>
+          <div className={styles.customNumber}>{statistics.recent_month_number}</div>
         </Col>
         <Col span={5} className={styles.customCol}>
           <strong>总访客数量</strong><br/>
-          <text className={styles.customNumber}>{statistics.total_ip_number}</text>
+          <div className={styles.customNumber}>{statistics.total_ip_number}</div>
         </Col>
         <Col span={5} className={styles.customCol}>
           <strong>近30日访客数量</strong><br/>
-          <text className={styles.customNumber}>{statistics.recent_month_ip_number}</text>
+          <div className={styles.customNumber}>{statistics.recent_month_ip_number}</div>
         </Col>
       </Row>
     </Card>

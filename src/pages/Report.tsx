@@ -4,6 +4,7 @@ import {Space, Table, Tag} from "antd";
 import {getMonthlyReport} from "@/services/leetcode";
 import {colorList} from "@/components/NavigatorRow/CourseRow";
 import {AccessPage, sendAccessInfo} from "@/services/access_data";
+import {fileServer, reportPrefix} from "@/pages/consts";
 
 const getAllReport = getMonthlyReport;
 sendAccessInfo(null, AccessPage.PageReport)
@@ -33,23 +34,27 @@ export default (): React.ReactNode => {
       key: 'tags',
       render: (tags: any[]) => (
         <>
-          <>
-            {tags.map(tag => {
-              let color = colorList[Math.floor(Math.random() * 6)]
-              return (
-                <Tag color={color} key={tag}>
-                  {tag.toUpperCase()}
-                </Tag>
-              );
-            })}
-          </>
+          {tags.map(tag => {
+            let color = colorList[Math.floor(Math.random() * 6)]
+            return (
+              <Tag color={color} key={tag}>
+                {tag.toUpperCase()}
+              </Tag>
+            );
+          })}
         </>
       ),
     },
     {
       title: '最后修改时间',
-      dataIndex: 'create_time',
-      key: 'create_time',
+      dataIndex: 'update_time',
+      key: 'update_time',
+      defaultSortOrder: 'ascend',
+      sorter: (a: any, b: any) => {
+        let t1 = new Date(a.update_time).getTime()
+        let t2 = new Date(b.update_time).getTime()
+        return t2 - t1
+      },
     },
     {
       title: '操作',
@@ -57,8 +62,8 @@ export default (): React.ReactNode => {
       key: 'x',
       render: (text: any, record: any) => (
         <Space size="middle">
-          <a href={`http://123.57.66.63:8001/monthly_report/${record.url}`}>预览</a>
-          <a>下载</a>
+          <a href={fileServer + reportPrefix + record.url}>预览</a>
+          <a href={fileServer + reportPrefix + record.url}>下载</a>
         </Space>
       )
     },
