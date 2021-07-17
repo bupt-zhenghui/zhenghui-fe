@@ -4,11 +4,11 @@ export function SearchProject(params: any) {
   return request.get(`/project/search`, params);
 }
 
-export function InsertProject(params: any) {
-  return request.post(`/project/insert`, params)
+export function PostInsertProject(params: any) {
+  return request.post(`/project/create`, params)
 }
 
-export function UpdateProject(params: any) {
+export function PostUpdateProject(params: any) {
   return request.post(`/project/update`, params)
 }
 

@@ -19,7 +19,6 @@ export default (): React.ReactNode => {
       setReportList(reportList)
     }
     getReportList();
-    console.log("report list: ", reportList)
   }, [])
 
   const columns = [

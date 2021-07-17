@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Card, Table} from "antd";
 import {getAccessInfo} from "@/services/access_data";
-import {String2Date, String2Time} from "@/pages/utils";
+import {String2Time} from "@/pages/utils";
 
 let VisualCard3 = () => {
 
@@ -11,8 +11,8 @@ let VisualCard3 = () => {
       const accessList = await getAccessInfo(null);
       setAccessList(accessList)
     }
-    getAccessList();
-    console.log("access list: ", accessList)
+    getAccessList().then(() => {
+    });
   }, [])
 
   const columns = [

@@ -14,7 +14,6 @@ let VisualCard2 = () => {
     const getStatistics = async () => {
       const statistics = await getAccessStatisticsMid(null);
       setStatistics(statistics)
-      console.log("statistics: ", statistics)
     }
     getStatistics();
   }, [])

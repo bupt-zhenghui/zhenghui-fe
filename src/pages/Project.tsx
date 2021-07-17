@@ -17,8 +17,8 @@ export default (): React.ReactNode => {
       const projectList = await SearchProject(null);
       setProjectList(projectList)
     }
-    getProjectList();
-    console.log("project list: ", projectList)
+    getProjectList().then(() => {
+    });
   }, [])
 
   const columns = [
@@ -29,7 +29,7 @@ export default (): React.ReactNode => {
       style: {display: "none"},
     },
     {
-      title: '标题',
+      title: '项目名称',
       dataIndex: 'name',
       key: 'name',
       sorter: (a: any, b: any) => a.key - b.key
@@ -38,13 +38,13 @@ export default (): React.ReactNode => {
       title: '标签',
       dataIndex: 'tag',
       key: 'tag',
-      render: (tags: any[]) => (
+      render: (tags: string) => (
         <>
-          {tags.map(tag => {
+          {tags.split(',').map(tag => {
             let color = colorList[Math.floor(Math.random() * 6)]
             return (
               <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
+                {tag}
               </Tag>
             );
           })}
@@ -72,7 +72,7 @@ export default (): React.ReactNode => {
           {record.github_url === "" ?
             <a disabled>Github</a>
             :
-            <a href={fileServer + projectPrefix + record.github_url} target="_blank">Github</a>
+            <a href={record.github_url} target="_blank">Github</a>
           }
           {
             record.md_url === "" ?

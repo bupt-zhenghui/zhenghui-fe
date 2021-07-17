@@ -22,7 +22,7 @@ const props = {
 
 let UploadReport = () => {
   return (
-    <Card title="上传月报或文档">
+    <Card title="上传月报或文档" style={{marginBottom: 20}}>
       <Upload {...props} style={{textAlign: "center"}}>
         <Button icon={<UploadOutlined/>}>Click to Upload</Button>
       </Upload>

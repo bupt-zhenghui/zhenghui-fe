@@ -4,6 +4,7 @@ import {Space} from "antd";
 import {getLeetcodeList} from "@/services/leetcode";
 import ProTable from '@ant-design/pro-table';
 import {AccessPage, sendAccessInfo} from "@/services/access_data";
+import LeetcodeCard from "@/components/VisualCard/LeetcodeCard";
 
 const getAllLeetcode = getLeetcodeList;
 sendAccessInfo(null, AccessPage.PageLeetcode)
@@ -70,6 +71,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
+      <LeetcodeCard/>
       <ProTable dataSource={leetcodeList} columns={columns}/>;
     </PageContainer>
   );
