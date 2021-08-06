@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, Col, Image, Row, Typography} from "antd";
 import EduExp from "@/components/InfoCard/EduExp";
 import Award from "@/components/InfoCard/Award";
+import {fileServer} from "@/pages/consts";
 
 const { Title, Paragraph, Link } = Typography;
 
@@ -30,7 +31,7 @@ export default class InfoCard extends React.Component {
                 <Title level={5} style={{marginTop: 0}}>邮箱：wangzhenghui@bupt.edu.cn</Title>
                 <Title level={5} style={{marginTop: 0}}>研究生单位：北邮人工智能学院 智能科学与技术系</Title>
                 <Title level={5} style={{marginTop: 0}}>研究生导师：冯方向</Title>
-                <Title level={5} style={{marginTop: 0}}>个人简历：<Link href="http://www.baidu.com"
+                <Title level={5} style={{marginTop: 0}}>个人简历：<Link href={fileServer + "/resume.pdf"}
                                                                    target="_blank">简历下载</Link></Title>
               </Typography>
             </Col>

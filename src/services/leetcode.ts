@@ -11,9 +11,13 @@ export interface ILeetcodeResponse {
 }
 
 export function getLeetcodeList(params: any) {
-  return request.get("/get-leetcode", params);
+  return request.get("/leetcode/list", params);
 }
 
 export function getMonthlyReport(params: any) {
   return request.get("/get-report", params);
+}
+
+export function getLeetcodeStatistics(params: any) {
+  return request.get("/leetcode/statistics", params)
 }
