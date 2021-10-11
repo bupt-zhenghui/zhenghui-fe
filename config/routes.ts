@@ -78,14 +78,8 @@
     component: './Project',
   },
   {
-    name: 'tomorrow',
-    icon: 'table',
-    path: '/thanks',
-    component: './HelloTomorrow',
-  },
-  {
     path: '/',
-    redirect: '/thanks',
+    redirect: '/navigator',
   },
   {
     component: './404',

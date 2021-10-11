@@ -61,8 +61,8 @@ export default (): React.ReactNode => {
       key: 'x',
       render: (text: any, record: any) => (
         <Space size="middle">
-          <a href={fileServer + reportPrefix + record.url}>预览</a>
-          <a href={fileServer + reportPrefix + record.url}>下载</a>
+          <a href={fileServer + reportPrefix + record.url} target="_blank">预览</a>
+          <a href={fileServer + reportPrefix + record.url} target="_blank">下载</a>
         </Space>
       )
     },

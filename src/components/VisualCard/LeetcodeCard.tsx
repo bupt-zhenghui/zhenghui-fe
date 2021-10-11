@@ -45,7 +45,7 @@ let LeetcodeCard = () => {
           </div>
         </Card>
       </Col>
-      <Col span={8}>
+      <Col span={16}>
         <Card>
           <LeetcodeLine data={statistics.history_ac_data}/>
         </Card>
