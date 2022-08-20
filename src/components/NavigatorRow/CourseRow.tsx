@@ -10,25 +10,25 @@ export default class CourseRow extends React.Component {
     const dataSource = [
       {
         key: '1',
-        title: 'CS61A The Structure and Interpretation of Computer Programs',
-        affiliation: 'UC Berkeley',
-        tags: ['数据结构', 'python', 'OOP'],
-        course_link: 'https://www-inst.eecs.berkeley.edu//~cs61a/archives.html',
-        video_link: 'https://www.bilibili.com/video/BV1nJ41157p6?from=search&seid=5097790262387752593',
+        title: 'Data Structure and Algorithm',
+        affiliation: 'Tsinghua University',
+        tags: ['C++', 'Data Structure', 'Algorithm'],
+        course_link: 'https://www.xuetangx.com/learn/THU08091000384/THU08091000384/5883586/article/9215515',
+        video_link: 'https://www.xuetangx.com/learn/THU08091000384/THU08091000384/5883586/article/9215515',
       },
       {
         key: '2',
-        title: 'Data Structure and Algorithm',
-        affiliation: 'Tsinghua University',
-        tags: ['C++', '数据结构', '算法'],
-        course_link: 'https://www.xuetangx.com/learn/THU08091000384/THU08091000384/5883586/article/9215515',
-        video_link: 'https://www.xuetangx.com/learn/THU08091000384/THU08091000384/5883586/article/9215515',
+        title: 'CS61A SICP',
+        affiliation: 'UC Berkeley',
+        tags: ['DS', 'Python', 'OOP'],
+        course_link: 'https://www-inst.eecs.berkeley.edu//~cs61a/archives.html',
+        video_link: 'https://www.bilibili.com/video/BV1nJ41157p6?from=search&seid=5097790262387752593',
       },
       {
         key: '3',
         title: 'CS61B Data Structures',
         affiliation: 'UC Berkeley',
-        tags: ['Java', 'OOP', '数据结构', '一门课进硅谷'],
+        tags: ['Java', 'OOP', 'DS'],
         course_link: 'https://www-inst.eecs.berkeley.edu//~cs61b/archives.html',
         video_link: 'https://www.bilibili.com/video/BV1EJ411n72e?from=search&seid=13000460787911995305',
       },
@@ -36,9 +36,33 @@ export default class CourseRow extends React.Component {
         key: '4',
         title: 'CS61C Machine Structures',
         affiliation: 'UC Berkeley',
-        tags: ['数电', '体系结构', '嵌入式', '操作系统'],
+        tags: ['Hardware', 'Architecture', 'OS'],
         course_link: 'https://www-inst.eecs.berkeley.edu//~cs61c/archives.html',
         video_link: 'https://www.bilibili.com/video/BV1fC4y147iZ?from=search&seid=17057399799068967609',
+      },
+      {
+        key: '5',
+        title: 'CS:APP',
+        affiliation: 'Carnegie Mellon University',
+        tags: ['C', 'Computer System', 'OS'],
+        course_link: 'https://www.cs.cmu.edu/~213/',
+        video_link: 'https://www.bilibili.com/video/BV1iW411d7hd?from=search&seid=18057712269057339246&spm_id_from=333.337.0.0',
+      },
+      {
+        key: '6',
+        title: '6.S081 (6.828)',
+        affiliation: 'Massachusetts Institute of Technology',
+        tags: ['C', 'OS'],
+        course_link: 'https://www.bilibili.com/video/BV19k4y1C7kA?from=search&seid=7373883336650495786&spm_id_from=333.337.0.0',
+        video_link: 'https://www.bilibili.com/video/BV19k4y1C7kA?from=search&seid=7373883336650495786&spm_id_from=333.337.0.0',
+      },
+      {
+        key: '7',
+        title: '6.824',
+        affiliation: 'Massachusetts Institute of Technology',
+        tags: ['Distributed System'],
+        course_link: 'https://www.bilibili.com/video/BV1R7411t71W?from=search&seid=2395721526941067788&spm_id_from=333.337.0.0',
+        video_link: 'https://www.bilibili.com/video/BV1R7411t71W?from=search&seid=2395721526941067788&spm_id_from=333.337.0.0',
       },
     ];
 
@@ -63,7 +87,7 @@ export default class CourseRow extends React.Component {
               let color = colorList[Math.floor(Math.random()*6)]
               return (
                 <Tag color={color} key={tag}>
-                  {tag.toUpperCase()}
+                  {tag}
                 </Tag>
               );
             })}

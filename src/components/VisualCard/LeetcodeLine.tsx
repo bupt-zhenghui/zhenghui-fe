@@ -12,7 +12,7 @@ export default class LeetcodeLine extends React.Component<IProp, any> {
   }
 
   render() {
-    var config = {
+    const config = {
       height: 172,
       data: this.props.data,
       xField: 'date',

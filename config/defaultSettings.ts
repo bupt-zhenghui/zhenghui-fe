@@ -14,7 +14,7 @@ const Settings: LayoutSettings & {
   colorWeak: false,
   title: '',
   pwa: false,
-  logo: '/icons/bytedance2.png',
+  logo: '/icons/bupt_logo.png',
   iconfontUrl: 'https://bytedance.net/',
 };
 

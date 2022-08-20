@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DW1FMKJGYB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-DW1FMKJGYB');
+    /**
+     * Function that registers a click on an outbound link in Analytics.
+     * This function takes a valid URL string as an argument, and uses that URL string
+     * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+     * using 'navigator.sendBeacon' in browser that support it.
+     */
+    var getOutboundLink = function (label) {
+      gtag('event', 'click', {
+        'event_category': 'outbound',
+        'event_label': label,
+        'transport_type': 'beacon'
+      });
+    }
+  </script>
+
+  <title> Resume | Wang Zheng Hui</title>
+
+  <link href="davewhipp-screen.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="davewhipp-print.css" type="text/css" rel="stylesheet" media="print">
+
+  <meta name="thumbnail" content="https://i.imgur.com/lHhRvK6.png"/>
+</head>
+<body>
+<div id="main">
+  <div id="content">
+    <h1 id="tong-hui-kang">Wang Zheng Hui</h1>
+    <p><br/>
+      First-year Graduate Student <br/>
+      at Beijing University of Posts & Telecommunications <br/>
+    </p>
+    <div id="contacts">
+      <a id="personal-contacts">Chinese Citizen | wangzhenghui (at) bupt.edu.cn</a>
+    </div>
+    <div id="webaddress">
+      <a href="http://www.zhenghui.tech/welcome" onclick="getOutboundLink('Resume'); return true;" target="_blank">
+        Information</a> |
+      <a href="http://www.zhenghui.tech/welcome" onclick="getOutboundLink('Resume'); return true;" target="_blank">
+        Resume</a> |
+      <a href="http://www.zhenghui.tech/navigator" onclick="getOutboundLink('Codeforces'); return true;"
+         target="_blank">
+        Navigator</a> |
+      <a href="http://www.zhenghui.tech/report" onclick="getOutboundLink('LinkedIn'); return true;" target="_blank">
+        Report</a> |
+      <a href="https://github.com/bupt-zhenghui" onclick="getOutboundLink('Github'); return true;" target="_blank">
+        Github</a> |
+      <a href="http://www.zhenghui.tech/project" onclick="getOutboundLink('Kaggle'); return true;" target="_blank">
+        Project</a> |
+    </div>
+    <h3 id="interested-in">Interested in</h3>
+    <p>Software Development, Image Harmonization, and Competitive Programming</p>
+    <h2 id="education">Education</h2>
+    <p><strong>Beijing University of Posts & Telecommunications</strong>
+      <code class="language-plaintext highlighter-rouge">Sep 2017 - Jun 2021</code></p>
+    <ul>
+      <li>Bachelor of Management with Honours</li>
+      <li>Data Structure, Computer Network, Software Engineering</li>
+      <li>GPA <a id="sutd-gpa">&gt; 3.6/4.0</a></li>
+      <li>Ranking <a id="sutd-gpa">&gt; 17/178</a></li>
+    </ul>
+    <p><strong>Beijing University of Posts & Telecommunications</strong>
+      <code class="language-plaintext highlighter-rouge">Sep 2021 - Jun 2024</code></p>
+    <ul>
+      <li>Master of Engineering</li>
+      <li>Advanced Machine Learning, Image Harmonization, Mass information processing technology and practice</li>
+    </ul>
+
+    <h2 id="work-experience">Work Experience</h2>
+    <p><strong>ByteDance</strong>
+      <code class="language-plaintext highlighter-rouge">Mar 2021 - Aug 2021</code><br/>
+      Software Development Intern</p>
+    <ul>
+      <li>Participate in developing data governance portal</li>
+      <li>Assist in building the underlying metadata tables</li>
+      <li>Technical domains: Golang React Git MySQL Hive</li>
+    </ul>
+
+    <h2 id="research-projects">Research Projects</h2>
+    <p><strong>Live Piano Cover Transcription</strong>
+      <code class="language-plaintext highlighter-rouge">Jan 2018 - Sep 2018</code></p>
+    <ul>
+      <li>Generated a dataset of synthesized piano covers and its respective scores for training</li>
+      <li>Developed a machine learning model to transcribe piano covers within two octaves</li>
+    </ul>
+    <p><strong>Fake News Chrome Extension</strong>
+      <code class="language-plaintext highlighter-rouge">Oct 2017 - Jul 2018</code></p>
+    <ul>
+      <li>Constructed a Python API to detect registered falsehoods with subject-word-object triplets</li>
+    </ul>
+    <h2 id="co-curricular-activities">Co-curricular activities</h2>
+    <p><strong>SUTD Robotics Club</strong>
+      <code class="language-plaintext highlighter-rouge">May 2017 - Mar 2020</code><br/>
+      Committee Member, SAUVC participant</p>
+    <ul>
+      <li>Facilitated Arduino workshops for more than 100 participants</li>
+      <li>Engineered hydrophones to locate pingers for SAUVC competition</li>
+    </ul>
+    <div style="page-break-after: always;"></div>
+    <h2 id="contests">Contests</h2>
+    <h3 id="algorithms">Algorithms</h3>
+    <p><strong>Codeforces</strong> – rating <a id="rating">1599</a> <strong><a
+      href="https://codeforces.com/profile/huikang" id="rank">specialist</a></strong>, rank <a id="placing">15000</a>,
+      over 50 contests
+      <code class="language-plaintext highlighter-rouge">Present</code></p>
+    <p><strong>Facebook</strong> Hack 2020 – Coding Challenge Top Team, Overall 2nd Team
+      <code class="language-plaintext highlighter-rouge">Oct 2020</code></p>
+    <p><strong>Credit Suisse</strong> CodeIT Suisse 2019 – Singapore 3rd Team
+      <code class="language-plaintext highlighter-rouge">Sep 2019</code></p>
+    <h3 id="data-science">Data Science</h3>
+    <p><strong>Shopee</strong> Code League 2020
+      <code class="language-plaintext highlighter-rouge">Jun 2020 - Aug 2020</code></p>
+    <ul>
+      <li>Top 70 among 400+ groups for each data science and data analytics component</li>
+      <li>Awarded 5 Kaggle Bronze medals from notebooks shared with the community</li>
+    </ul>
+    <p><strong>Temasek</strong> HyperHack Datathon 2019 – Winning Team out of 12 teams
+      <code class="language-plaintext highlighter-rouge">Nov 2019</code></p>
+    <ul>
+      <li>Analysed synthesised personal data in a secure environment</li>
+      <li>Pitched the value of data collaboration to a panel of judges</li>
+    </ul>
+    <p><strong>Bank of Singapore</strong> CodeBOSS 2019 – 3rd team
+      <code class="language-plaintext highlighter-rouge">Oct 2019</code></p>
+    <ul>
+      <li>Responsible for the data science component in the team</li>
+      <li>Predicted housing prices based on given and engineered features</li>
+    </ul>
+    <p><strong>EY</strong> NextWave Data Science Challenge - local 3rd team
+      <code class="language-plaintext highlighter-rouge">Apr 2019</code></p>
+    <ul>
+      <li>Tasked to predict whether a device ends up in a specific area</li>
+      <li>Presented the solution and journey to EY data scientists in local finals</li>
+    </ul>
+    <p><strong>Shopee</strong> National Data Science Challenge 2019 – LB 16th/250, Merit Team
+      <code class="language-plaintext highlighter-rouge">Mar 2019</code></p>
+    <ul>
+      <li>Tasked to determine the category of a product given its image and title</li>
+      <li>Developed and shared a baseline NLP model adopted by 200+ other participants</li>
+    </ul>
+    <h2 id="academic-projects">Academic Projects</h2>
+    <p><strong>40.014 Engineering Systems Architecture</strong>
+      <code class="language-plaintext highlighter-rouge">Feb 2020 - Apr 2020</code><br/>
+      HealthOrWealth - a card game to teach policymaking</p>
+    <ul>
+      <li>Delivered a game to let players experience tradeoffs faced by policymakers in a pandemic</li>
+      <li>Prototyped an RShiny companion to assist the game</li>
+    </ul>
+    <p><strong>40.012 Manufacturing and Service Operations</strong>
+      <code class="language-plaintext highlighter-rouge">Feb 2020 - Apr 2020</code><br/>
+      Inventory Management for Pharmaforte</p>
+    <ul>
+      <li>Modelled demand distribution from product data and employed (Q,r) inventory model</li>
+      <li>Project writeup is featured in a school biannual newsletter</li>
+    </ul>
+    <p><strong>40.011 Data and Business Analytics</strong>
+      <code class="language-plaintext highlighter-rouge">Aug 2019 - Dec 2019</code><br/>
+      Population Density Prediction for Teralytics</p>
+    <ul>
+      <li>Implemented algorithms to predict population density distribution 10 mins in the future</li>
+      <li>Improved the mean squared error by 50% from the baseline</li>
+    </ul>
+    <p><strong>40.015 Simulation Modelling and Analysis</strong>
+      <code class="language-plaintext highlighter-rouge">Aug 2019 - Dec 2019</code><br/>
+      Housing Prices Simulation</p>
+    <ul>
+      <li>Simulated housing prices with individual agents and houses on a grid</li>
+      <li>Reproduced some characteristics of the housing market such as inflation and homelessness</li>
+      <li>Project video is featured in the end-of-term showcase</li>
+    </ul>
+    <p><strong>3.007 Introduction to Design</strong>
+      <code class="language-plaintext highlighter-rouge">Aug 2017 - Dec 2017</code><br/>
+      Automatic Anti-Afterimage Glasses</p>
+    <ul>
+      <li>Prototyped eyeglasses that darken in response to incident headlights to prevent afterimages</li>
+      <li>Conducted comprehensive user tests in multiple live environments</li>
+      <li>Project is featured in the university open house and library exhibitions</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function interpolate(low_x, high_x, low_y, high_y, given_x) {
+    console.log(low_x, high_x, low_y, high_y, given_x)
+    return Math.floor(low_y + (given_x - low_x) / (high_x - low_x) * (high_y - low_y))
+  }
+
+  function rating_to_world_rank_map(rating) {
+    benchmarks = {
+      1400: 24500,
+      1500: 19000,
+      1600: 15000,
+      1700: 10750,
+      1800: 7800,
+      1900: 6000,
+      2000: 4150,
+      2100: 3000,
+      2200: 1600,
+      2300: 900,
+      2400: 600
+    };
+
+    let prev_reference = 100000;
+    let prev_benchmark = 1000;
+    for (let benchmark in benchmarks) {
+      benchmark = parseInt(benchmark)
+      let reference = benchmarks[benchmark];
+      if (rating <= benchmark) {
+        return interpolate(prev_benchmark, benchmark, prev_reference, reference, rating)
+      }
+      prev_reference = reference;
+      prev_benchmark = benchmark;
+    }
+    return "sub-600"
+  }
+
+  function rank_to_color(rank) {
+    if (rank == "expert") {
+      return "blue"
+    }
+    if (rank == "candidate master") {
+      return "purple"
+    }
+    if (rank.includes("grandmaster")) {
+      return "red"
+    }
+    if (rank.includes("master")) {
+      return "orange"
+    }
+    if (rank == "pupil" || rank == "specialist") {
+      return "green"
+    }
+    return "grey"
+  }
+
+  let apiUrl_codeforces = 'https://codeforces.com/api/user.info?handles=huikang';
+  fetch(apiUrl_codeforces).then(response => {
+    return response.json();
+  }).then(data => {
+    console.log("updating Codeforces data")
+    let profile = data["result"][0]
+    document.getElementById("rating").text = profile["rating"];
+    document.getElementById("placing").text = rating_to_world_rank_map(profile["rating"]);
+    document.getElementById("rank").text = profile["rank"];
+    document.getElementById("rank").style.color = rank_to_color(profile["rank"]);
+  }).catch(err => {
+    console.log(err)
+  });
+</script>
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let passcode = params.get("passcode");
+  let apiUrl_personal = 'https://tonghuikang.github.io/resume-secret/' + passcode + '/data.json';
+  fetch(apiUrl_personal).then(response => {
+    return response.json();
+  }).then(data => {
+    console.log("updating personal data")
+    console.log(data)
+    document.getElementById("sutd-gpa").text = data["sutd-gpa"];
+    document.getElementById("smu-gpa").text = data["smu-gpa"];
+
+    contacts = Array(["Singapore Citizen"])
+    if ('email' in data) {
+      contacts.push(data['email'])
+    }
+    if ('phone' in data) {
+      contacts.push(data['phone'])
+    }
+    document.getElementById("personal-contacts").text = contacts.join(" | ")
+
+  }).catch(err => {
+    console.log(err)
+  });
+</script>
+</body>
+</html>

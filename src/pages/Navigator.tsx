@@ -1,25 +1,33 @@
 import React from 'react';
 import {PageContainer} from '@ant-design/pro-layout';
-import {Alert, Button, Card} from "antd";
+import {Alert, Card} from "antd";
 import NavigatorRow from "@/components/NavigatorRow";
+// import CustomAlert from "@/components/NavigatorRow/CustomAlert"
+
 import CourseRow from "@/components/NavigatorRow/CourseRow";
 import {AccessPage, sendAccessInfo} from "@/services/access_data";
 
 sendAccessInfo(null, AccessPage.PageNavigation)
 export default (): React.ReactNode => {
-
   return (
     <PageContainer>
       <Alert
-        message="主页还在迁移过程中，敬请期待～！"
+        message={
+          "路漫漫其修远兮，吾将上下而求索"
+        }
         type="info"
-        showIcon
-        closable
+        // showIcon
         style={{marginBottom: 12}}
         action={
-          <a href="http://zhenghui.tech:5555"><Button size="small" type="primary">原站点</Button></a>
+          <a href="http://123.57.66.63:8001/html/2022-06.html" target="_blank">
+            2022年六月月报
+          </a>
         }
       />
+      {/*<Card title="3月OKR" extra={<a href="http://123.57.66.63:8001/html/2022-03.html">3月月报</a>} style={{marginBottom: 20}}>*/}
+      {/*  <CustomAlert text="Leetcode daily question & weekly competition" />*/}
+      {/*  <CustomAlert text="图像和谐化3篇论文阅读和复现" />*/}
+      {/*</Card>*/}
       <Card style={{marginBottom: 20}}>
         <NavigatorRow id={0} title="谷歌搜索" src="/icons/google.png" href="https://www.google.com.hk/"/>
         <NavigatorRow id={1} title="百度搜索" src="/icons/baidu.png" href="https://www.baidu.com"/>

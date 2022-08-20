@@ -4,7 +4,7 @@ import {Space, Table, Tag} from "antd";
 import {getMonthlyReport} from "@/services/leetcode";
 import {colorList} from "@/components/NavigatorRow/CourseRow";
 import {AccessPage, sendAccessInfo} from "@/services/access_data";
-import {fileServer, reportPrefix} from "@/pages/consts";
+import {fileServer, htmlPrefix, reportPrefix} from "@/pages/consts";
 
 const getAllReport = getMonthlyReport;
 sendAccessInfo(null, AccessPage.PageReport)
@@ -61,8 +61,8 @@ export default (): React.ReactNode => {
       key: 'x',
       render: (text: any, record: any) => (
         <Space size="middle">
-          <a href={fileServer + reportPrefix + record.url}>预览</a>
-          <a href={fileServer + reportPrefix + record.url}>下载</a>
+          <a href={fileServer + htmlPrefix + record.title + '.html'} target="_blank">预览</a>
+          <a href={fileServer + reportPrefix + record.url} target="_blank">下载</a>
         </Space>
       )
     },
@@ -70,7 +70,7 @@ export default (): React.ReactNode => {
 
   return (
     <PageContainer>
-      <Table dataSource={reportList} columns={columns}/>;
+      <Table dataSource={reportList} columns={columns}/>
     </PageContainer>
   );
 };
