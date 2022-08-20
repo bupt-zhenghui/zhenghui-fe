@@ -3,7 +3,7 @@ import {useState} from "react";
 import {PostInsertProject} from '@/services/project';
 import EditProject from "./EditProject";
 
-let InsertProject = () => {
+const InsertProject = () => {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = () => {
@@ -11,7 +11,8 @@ let InsertProject = () => {
   };
 
   const [form] = Form.useForm();
-  const handleOk = async () => {//点击对话框OK按钮触发的事件
+  const handleOk = async () => {
+    // 点击对话框OK按钮触发的事件
     await PostInsertProject(form.getFieldsValue())
     setIsModalVisible(false);
   };

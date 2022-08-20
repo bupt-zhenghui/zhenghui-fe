@@ -6,7 +6,7 @@ import {String2Time} from "@/pages/utils";
 import LeetcodeLine from "@/components/VisualCard/LeetcodeLine";
 
 
-let LeetcodeCard = () => {
+const LeetcodeCard = () => {
 
   const [statistics, setStatistics] = useState({
     statistics: {},

@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 import {Form, Input, message, Modal, Space, Table, Tag} from "antd";
-import {PostUpdateProject, SearchProject} from '@/services/project';
+import {PostUpdateProject, SearchProject, GetDeleteProject} from '@/services/project';
 import {colorList} from "@/components/NavigatorRow/CourseRow";
 import {String2Time} from '@/pages/utils';
 
 
-let EditProjectTable = () => {
+const EditProjectTable = () => {
 
   const [projectList, setProjectList] = useState([]);
   const [form] = Form.useForm();
@@ -25,6 +25,13 @@ let EditProjectTable = () => {
     showModal()
     return true
   }
+
+  const DeleteProject = async (project: any) => {
+    GetDeleteProject(null, project.id)
+    const projectList = await SearchProject(null);
+    setProjectList(projectList)
+  }
+
 
   const columns = [
     {
@@ -101,7 +108,7 @@ let EditProjectTable = () => {
       render: (text: any, record: any) => (
         <Space size="middle">
           <a onClick={(e) => editSingleProject(record)}>编辑</a>
-          <a>删除</a>
+          <a onClick={(e) => DeleteProject(record)}>删除</a>
         </Space>
       )
     },
@@ -118,13 +125,14 @@ let EditProjectTable = () => {
   };
 
 
-  const handleOk = async () => {//点击对话框OK按钮触发的事件
+  const handleOk = async () => {
+    // 点击对话框OK按钮触发的事件
     console.log(form.getFieldsValue())
-    await PostUpdateProject(form.getFieldsValue())
+    PostUpdateProject(form.getFieldsValue())
     const projectList = await SearchProject(null);
     setProjectList(projectList)
-    setIsModalVisible(false);
-    message.success('Update project information successfully.');
+    setIsModalVisible(false)
+    message.success('Update project information successfully.')
   };
 
   const handleCancel = () => {
@@ -175,7 +183,6 @@ let EditProjectTable = () => {
           >
             <Input/>
           </Form.Item>
-
           <Form.Item
             label="文档地址"
             name="md_url"
@@ -183,7 +190,6 @@ let EditProjectTable = () => {
           >
             <Input/>
           </Form.Item>
-
           <Form.Item
             label="github地址"
             name="github_url"
@@ -191,7 +197,6 @@ let EditProjectTable = () => {
           >
             <Input/>
           </Form.Item>
-
           <Form.Item
             label="下载地址"
             name="project_url"

@@ -12,4 +12,8 @@ export function PostUpdateProject(params: any) {
   return request.post(`/project/update`, params)
 }
 
+export function GetDeleteProject(params: any, id: number) {
+  return request.get(`/project/delete/${id}`, params);
+}
+
 
